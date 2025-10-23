@@ -14,8 +14,8 @@ CORS(app, origins=[
 # Student database with valid roll numbers
 VALID_ROLL_NUMBERS = set()
 
-# Generate roll numbers from 211-269 and 431-436
-for roll in range(201, 270):  # 211-269
+# Generate roll numbers from 201-269 and 431-436
+for roll in range(201, 270):  # 201-269
     VALID_ROLL_NUMBERS.add(str(roll))
 for roll in range(431, 437):  # 431-436
     VALID_ROLL_NUMBERS.add(str(roll))
