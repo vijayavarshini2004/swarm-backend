@@ -7,13 +7,12 @@ from datetime import datetime
 import uuid
 
 app = Flask(__name__)
-CORS(app)
-
+CORS(app, resources={r"/*": {"origins": "https://swarm-frontend-indol.vercel.app/"}})
 # Student database with valid roll numbers
 VALID_ROLL_NUMBERS = set()
 
 # Generate roll numbers from 211-269 and 431-436
-for roll in range(211, 270):  # 211-269
+for roll in range(201, 270):  # 211-269
     VALID_ROLL_NUMBERS.add(str(roll))
 for roll in range(431, 437):  # 431-436
     VALID_ROLL_NUMBERS.add(str(roll))
@@ -70,6 +69,10 @@ def log_contribution(node_id, action, impact=""):
         'impact': impact
     }
     game_data['contribution_log'].append(log_entry)
+
+@app.route('/')
+def home():
+    return jsonify({"message": "Swarm Vision backend is running successfully!"}), 200
 
 @app.route('/admin/login', methods=['POST'])
 def admin_login():
