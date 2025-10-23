@@ -10,7 +10,8 @@ app = Flask(__name__)
 CORS(app, origins=[
     "http://localhost:3000",  # for local React dev
     "https://swarm-frontend-lm2avzxm7-varshinis-projects-50d32d39.vercel.app",
-    "https://swarm-frontend-indol.vercel.app/"  # your deployed React frontend
+    "https://swarm-frontend-indol.vercel.app/",
+    "https://swarm-frontend-xgsc.onrender.com"  # your deployed React frontend
 ])
 # Student database with valid roll numbers
 VALID_ROLL_NUMBERS = set()
